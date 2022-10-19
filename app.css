@@ -1,0 +1,544 @@
+*{
+    border: 0px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    list-style: none;
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+input:focus,textarea:focus{
+    outline: none;
+}
+
+#root{
+    width: 100vw;
+    position: relative;
+    background-color: #65646436;
+}
+
+.slider_wrapper{
+    width: 100vw;
+    height: auto;
+    overflow-x: scroll;
+}
+
+.slider_wrapper::-webkit-scrollbar{
+    display: none;
+}
+
+.slider_frame{
+    width: 2200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftNavigator , .rightNavigator{
+    width: auto;
+    height: auto;
+    position: absolute;
+    z-index: 100;
+    top:150px;
+    font-size: 50px;
+    font-weight: 900;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px 0px black, -2px -2px 2px white;
+}
+
+.leftNavigator{
+    padding: 0px 10px 10px 5px ;
+    left: 10px;
+    background-color: rgb(254 255 255 / 20%);
+    
+}
+.rightNavigator{
+    padding: 0px 5px 10px 10px ;
+    right: 10px;
+    background-color: rgb(254 255 255 / 20%);
+}
+
+.leftNavigator:hover,.rightNavigator:hover{
+    background-color: rgb(254 255 255 / 50%);
+}
+
+.img{
+    width: 550px;
+    height: 300px;
+    position: relative;
+    margin-right: 5px;
+    object-fit: fill;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+}
+
+.SliderTitle{
+    font-size: 30px;
+    color: white;
+    background-color: rgb(0 0 0 / 20%);
+    border-radius: 20px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 1;
+    left: 20%;
+    top: 20%;
+}
+
+.slider_frame h1{
+    font-size: 35px;
+    color: red;
+    font-weight: 900;
+    text-shadow: 2px 2px 1px white;
+}
+
+.img button{
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin-top: 20px;
+    border: 2px solid blueviolet;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: blueviolet;
+}
+
+.flexCenter{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* header */
+
+.headerFrame{
+    width: 100vw;
+    height: auto;
+    margin: 0px 0px 10px 0px;
+    background-color: #65646436;
+    padding: 20px 30px 10px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    cursor: pointer;
+}
+
+.headerFrame .headerMember{
+    position: relative;
+}
+.headerFrame .headerMember h1{
+    color: blueviolet;
+}
+
+.headerFrame .headerMember span:first-child{
+    color: blueviolet;
+    width: 150px;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 25px;
+}
+.headerFrame .headerMember .addedCartNum{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -15px;
+    top: -15px;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 50%;
+    display: grid;
+    cursor: pointer;
+    place-items: center;
+    background-color: white;
+    color: blueviolet;
+    box-shadow: -2px -2px 5px black, 2px 2px 2px #b0b0b0;
+}
+
+
+.partitioningTitle{
+    margin-top: 20px;
+    padding: 5px 0;
+    position: relative;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 6px red;
+}
+
+.partitioningTitle::after{
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    top: 100%;
+    border-radius: 5px;
+    background: linear-gradient(45deg,red,transparent,red,transparent,red,transparent);
+}
+
+
+/* card */
+.cardCollector{
+    width: 100vw;
+    height: auto;
+    display: grid;
+    overflow-x: hidden;
+    grid-template-columns: repeat(auto-fill,400px);
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.CardFrame{
+    width: 380px;
+    height: auto;
+    box-shadow: -2px -2px 5px 0px blueviolet, 2px 2px 5px 0px black;
+    margin: 10px 0px;
+    padding: 5px 0px 0px 10px;
+    border-radius: 20px;
+}
+
+.CardFrame:hover .ImageFrame img{
+    transform: scale(1.2);
+    transition: .5s;
+}
+
+.ImageFrame{
+    width: 360px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.ImageFrame img{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+}
+
+.ContentFrame{
+    width: 360px;
+}
+
+.ContentFrame .InfoFrame{
+    width: 360px;
+    padding: 5px;
+    color: white;
+    text-shadow: 1px 1px 6px red;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
+
+.ButtonFrame{
+    width: 100%;
+    margin: 5px 0;
+}
+
+.btn{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px 10px;
+    margin: 10px;
+    border-radius: 10px;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    cursor: pointer;
+}
+
+.AddToCartBtn{
+    position: relative;
+}
+
+.AddToCartAnimate{
+    padding: 2px 8px;
+    border-radius: 50%;
+    color: blueviolet;
+    font-size: 30px;
+    position: absolute;
+    left: 15%;
+    top: 10px;
+    z-index: -1;
+    transition: all 5s;
+}
+
+.animateOnclick{
+    animation: addToCartAnimatation 2s linear 1;
+    z-index: 10000;
+    transition: all 5s;
+}
+
+@keyframes addToCartAnimatation {
+    50%{
+        transform: translateX(calc( 50vw)); 
+    }
+    100%{
+        transform: translateX(calc( 100vw)); 
+        z-index: -1;
+    }
+   
+}
+
+.CartFrame{
+    width: 60vw;
+    height: 80vh;
+    background-color: rgb(255 255 255 / 25%);
+    position: fixed;
+    margin-left: 20vw;
+    margin-top: 10vh;
+    z-index: 2500;
+    overflow: scroll;
+    padding: 20px;
+}
+
+.CartFrame::-webkit-scrollbar{
+    display: none;
+}
+
+.cartHeader{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0px;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: blueviolet;
+    background-color: #dedede;
+    margin-bottom: 10px;
+}
+
+.individualCartItem{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    background-color: #dedede;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border: 2px solid blueviolet;
+}
+
+.orderBtn{
+    font-size: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
+}
+
+.cartImage{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid blueviolet;
+    margin-right: 20px;
+}
+
+.cartImage img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.cartContent{
+    width: auto;
+    height: 150px;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: blueviolet;
+    margin-right: 20px;
+    text-align: center;
+}
+.cartContent div:first-child{
+    font-size: 25px;
+    text-shadow: 1px 1px 6px red;
+    color: white;
+}
+.cartContent > div{
+    margin-bottom: 20px;
+}
+.individualCartItem .CartButtonContainer{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    background-color: blueviolet;
+    border-radius: 20px;
+}
+
+.decrementButton,.incrementButton{
+    width: 60px;
+    height: 100%;
+    font-weight: 900;
+    color: blueviolet;
+    border: 1px solid blueviolet;
+    cursor: pointer;
+}
+
+.decrementButton{
+    font-size: 30px;
+}
+
+.incrementButton{
+    font-size: 25px;
+}
+
+.numberDisplay{
+    width: 60px;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+    color: white;
+}
+
+
+.formContainer{
+    width: 100vw;
+    height: auto;
+    margin-top: 20px;
+    padding: 20px 10px;
+    display: grid;
+    place-content: center;
+}
+
+
+.form{
+    width: 80vw;
+    height: auto;
+}
+
+.form form{
+    width: 100%;
+    display: grid;
+    place-content: center;
+    color: blueviolet;
+}
+
+.formRows{
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center !important;
+}
+
+.formFirstSection{
+    width: auto;
+    position: relative;
+}
+
+.formFirstSection span{
+    position: absolute;
+    left: 0;
+}
+
+.formFirstSection input{
+    width: 350px;
+    font-size: 17px;
+    padding: 3px 5px;
+    margin: 20px 10px 10px 0;
+}
+
+.formRows .textArea{
+    width: 710px;
+    margin: 20px 0;
+    font-size: 17px;
+    padding: 5px;
+}
+
+
+.error{
+    border: 1px solid red;
+    background-color: rgb(223, 121, 121);
+}
+
+.submitButton{
+    width: 150px;
+    height: 50px;
+    font-size: 17px;
+    font-weight: 900;
+    border-radius: 20px;
+    background-color: blueviolet;
+    color: white;
+}
+
+@media screen and (max-width : 1000px) {
+    .slider_frame{
+        width: 1200px;
+    }
+    .img{
+        height: 300px;
+        width: 350px;
+        object-fit: fill;
+    }
+    .CartFrame{
+        width: 80vw;
+        height: 80vh;
+        margin-left: 10vw;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .individualCartItem .CartButtonContainer{
+        margin-right: 10px;
+        width: 100px;
+    }
+    .cartContent{
+        margin-right: 10px;
+    }
+
+    .formFirstSection input{
+        width: 190px;
+    }
+    
+    .formRows .textArea{
+        width: 390px;
+    }
+    
+    
+}
+@media screen and (max-width : 500px) {
+    .slider_frame{
+        width: 400vw;
+    }
+    .img{
+        height: 200px;
+        width: 100vw;
+        object-fit: fill;
+    }
+    .CartFrame{
+        width: 90vw;
+        height: 80vh;
+        margin-left: 5vw;
+        padding: 10px;
+    }
+    .individualCartItem .CartButtonContainer{
+        margin-right: 0px;
+        width: 150px;
+    }
+    .formFirstSection input{
+        width: 80vw;
+    }
+    .formRows{
+        display: grid;
+        place-content: center;
+    }
+    .formRows .textArea{
+        width: 80vw;
+    }
+}
